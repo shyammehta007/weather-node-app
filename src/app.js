@@ -4,7 +4,7 @@ const hbs = require("hbs");
 const weather = require("./forcast");
 
 const app = express();
-
+const port = process.env.PORT || 3000;
 const publicDir = path.join(__dirname, "../public");
 const templateDir = path.join(__dirname, "../templates/views");
 const partialsPath = path.join(__dirname, "../templates/partials");
@@ -68,6 +68,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("server is started on 3000");
+app.listen(port, () => {
+  console.log("server is started on ", port);
 });
